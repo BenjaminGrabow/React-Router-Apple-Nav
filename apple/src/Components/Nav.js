@@ -26,7 +26,7 @@ class Nav extends React.Component {
                 return ( 
                         <StyledDiv>
                      {this.state.nav.map(navData => 
-                   <div>
+                   <div key={navData.id}>
                         <NavLink 
                         to={`/${navData.id}`}
                         id={navData.id}
@@ -35,7 +35,10 @@ class Nav extends React.Component {
                         </NavLink>
                         
                         <Route path={`/${navData.id}`}
-                   //       component={SubNav}
+                         render={() => <SubNav
+                                {...this.props}
+                                 data={navData.subLink} 
+                                 /> }
                          ></Route>      
                      </div>
                      )}
