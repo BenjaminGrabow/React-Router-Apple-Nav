@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledDiv = styled.div`
 
 display: flex;
+justify-content: space-between;
 width: 100%;
 background-color: #fff;
 
@@ -23,9 +24,9 @@ p {
 
 const SubNav = (props) => {
         return ( 
-                <StyledDiv>
+                <StyledDiv style={props.styleD}>
                         {props.data.map(data => 
-                        <div style={props.styleD}>
+                        <div>
                         <img 
                         src={data.imageUrl}
                          alt={data.id}
