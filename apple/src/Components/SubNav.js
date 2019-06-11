@@ -24,7 +24,7 @@ p {
 
 const SubNav = (props) => {
         return ( 
-                <StyledDiv style={props.styleD}>
+                <StyledDiv style={props.styleD} className="page">
                         {props.data.map(data => 
                         <div>
                         <img 
