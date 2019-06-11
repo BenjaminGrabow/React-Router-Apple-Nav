@@ -4,15 +4,14 @@ import styled from 'styled-components';
 const StyledDiv = styled.div`
 
 display: flex;
-margin: 1rem;
 width: 100%;
+background-color: #fff;
 
 
 img {
         width: 30%;
         height: 2rem;
         padding: 1rem;
-        margin-top: 1rem;
 }
 
 p {

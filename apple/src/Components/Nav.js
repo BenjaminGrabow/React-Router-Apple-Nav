@@ -5,10 +5,9 @@ import styled from 'styled-components';
 import SubNav from './SubNav';
 
 const StyledDiv = styled.div`
- display: flex;
- justify-content: center;
- 
- 
+
+background-color: black;
+
  nav {
         background: black;
         height: 3rem;
@@ -27,7 +26,7 @@ a {
 
 const blackStyle = {
         backgroundColor: 'black'
-      };
+};
 
 const whiteStyle = {
         color: "white"
@@ -36,37 +35,35 @@ const whiteStyle = {
 class Nav extends React.Component {
         constructor(props) {
                 super(props);
-                this.state = { 
+                this.state = {
                         nav: navData
-                 }
+                }
         }
-        render() { 
-                return ( 
+        render() {
+                return (
                         <StyledDiv>
-                     {this.state.nav.map(navData => 
-                   <div key={navData.id}>
-                           <nav>
-                        <NavLink 
-                        to={`/${navData.id}`}
-                        id={navData.id}
-                        >
-                        {navData.title}
-                        </NavLink>
-                        </nav>
-                        
-                        <Route path={`/${navData.id}`}
-                         render={() => <SubNav
-                                {...this.props}
-                                styleD={navData.title === 'TV' ? blackStyle : null}
-                                styleP={navData.title === 'TV' ? whiteStyle : null}
-                                 data={navData.subLink} 
-                                 /> }
-                         ></Route>      
-                     </div>
-                     )}
-                     </StyledDiv>   
-                 );
+                                {this.state.nav.map(navData =>
+                                                        <NavLink
+                                                                 key={navData.id}
+                                                                to={`/${navData.id}`}
+                                                                id={navData.id}>
+                                                                {navData.title}
+                                                        </NavLink>
+                                )}
+
+                                {this.state.nav.map(navData =>
+                                        <Route path={`/${navData.id}`}
+                                                render={() => <SubNav
+                                                        {...this.props}
+                                                        styleD={navData.title === 'TV' ? blackStyle : null}
+                                                        styleP={navData.title === 'TV' ? whiteStyle : null}
+                                                        data={navData.subLink}
+                                                />}
+                                        ></Route>
+                                )}
+                        </StyledDiv>
+                );
         }
 }
- 
+
 export default Nav;
