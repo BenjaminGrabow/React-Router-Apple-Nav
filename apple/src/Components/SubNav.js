@@ -11,6 +11,8 @@ width: 100%;
 img {
         width: 30%;
         height: 2rem;
+        padding: 1rem;
+        margin-top: 1rem;
 }
 
 p {
@@ -18,18 +20,23 @@ p {
 }
 `;
 
+
+
 const SubNav = (props) => {
         return ( 
                 <StyledDiv>
                         {props.data.map(data => 
-                        <div>
+                        <div style={props.styleD}>
                         <img 
                         src={data.imageUrl}
-                         alt={data.id}/>
-                         <p>{data.title}</p>
-                         </div>)}
+                         alt={data.id}
+                         />
+                         <p style={props.styleP}>{data.title}</p>
+                         </div>
+                         )}
                 </StyledDiv>
          );
 }
  
 export default SubNav;
+

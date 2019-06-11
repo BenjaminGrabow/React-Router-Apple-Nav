@@ -6,7 +6,8 @@ import SubNav from './SubNav';
 
 const StyledDiv = styled.div`
  display: flex;
- justify-content: space-between;
+ justify-content: center;
+ 
  
  nav {
         background: black;
@@ -18,9 +19,19 @@ a {
         text-decoration: none;
         width: 100%;
         color: white;
+        padding: 1.5rem;
+        
 }
 
 `;
+
+const blackStyle = {
+        backgroundColor: 'black'
+      };
+
+const whiteStyle = {
+        color: "white"
+}
 
 class Nav extends React.Component {
         constructor(props) {
@@ -46,6 +57,8 @@ class Nav extends React.Component {
                         <Route path={`/${navData.id}`}
                          render={() => <SubNav
                                 {...this.props}
+                                styleD={navData.title === 'TV' ? blackStyle : null}
+                                styleP={navData.title === 'TV' ? whiteStyle : null}
                                  data={navData.subLink} 
                                  /> }
                          ></Route>      
