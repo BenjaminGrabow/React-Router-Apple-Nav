@@ -7,10 +7,17 @@ import SubNav from './SubNav';
 const StyledDiv = styled.div`
  display: flex;
  justify-content: space-between;
+ 
+ nav {
+        background: black;
+        height: 3rem;
+        width: 100%;
+ }
 
 a {
         text-decoration: none;
-        margin: 1rem;
+        width: 100%;
+        color: white;
 }
 
 `;
@@ -27,12 +34,14 @@ class Nav extends React.Component {
                         <StyledDiv>
                      {this.state.nav.map(navData => 
                    <div key={navData.id}>
+                           <nav>
                         <NavLink 
                         to={`/${navData.id}`}
                         id={navData.id}
                         >
                         {navData.title}
                         </NavLink>
+                        </nav>
                         
                         <Route path={`/${navData.id}`}
                          render={() => <SubNav

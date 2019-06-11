@@ -4,10 +4,17 @@ import styled from 'styled-components';
 const StyledDiv = styled.div`
 
 display: flex;
+margin: 1rem;
+width: 100%;
+
 
 img {
-        width: 5%;
+        width: 30%;
         height: 2rem;
+}
+
+p {
+        font-size: .5rem;
 }
 `;
 
