@@ -20,8 +20,6 @@ p {
 }
 `;
 
-
-
 const SubNav = (props) => {
         return ( 
                 <StyledDiv style={props.styleD} className="page">

@@ -7,10 +7,8 @@ import SubNav from './SubNav';
 
 const StyledDiv = styled.div`
 
-background-color: black;
-
  nav {
-        background: black;
+        background: white;
         height: 3rem;
         width: 100%;
  }
@@ -18,12 +16,9 @@ background-color: black;
 a {
         text-decoration: none;
         width: 100%;
-        color: white;
-        padding: 1.5rem;
-        
+        color: black;
+        padding: 1.5rem;   
 }
-
-
 
 .navSlider-exit > .page {
         z-index: 1;
@@ -33,19 +28,19 @@ a {
         z-index: 10;
 }
 
-.navSlider-enter.left > .page {
+.navSlider-enter > .page {
         transform: translate3d(100%, 0, 0);
 }
 
-.navSlider-enter.right > .page {
+.navSlider-enter > .page {
         transform: translate3d(-100%, 0, 0);
 }
 
-.navSlider-exit.left > .page {
+.navSlider-exit > .page {
         transform: translate3d(-100%, 0, 0);
 }
 
-.navSlider-exit.right > .page {
+.navSlider-exit > .page {
         transform: translate3d(100%, 0, 0);
 }
 
@@ -53,8 +48,6 @@ a {
         transform: translate3d(0, 0, 0);
         transition: all 800ms ease-in-out;
 }
-
-
 `;
 
 const blackStyle = {
@@ -109,7 +102,8 @@ class Nav extends React.Component {
                                                 classNames="navSlider"
                                                 mountOnEnter={false}
                                                 unmountOnExit={true} >
-                                                <div className={this.getPathDepth(location) - this.state.prevDepth >= 0 ? "left" : "right"} >
+                                                <div
+                                                className={this.getPathDepth(location) - this.state.prevDepth >= 0 ? "left" : "right"}>
                                                         <Switch location={location}>
                                                                 {this.state.nav.map(navData =>
                                                                         <Route path={`/${navData.id}`}
