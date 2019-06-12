@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.icon {
+  background-image : url('https://www.apple.com//v/ipad/home/ao/images/chapternav/ipad_comp_light__f80dzq6i8sq6_large.svg');
+  background-size  : 15rem 10rem;
+  background-repeat: no-repeat;
+  width            : 10rem;
+  background: center bottom no-repeat;
+    display: block;
+    margin: 0 auto 6px;
+    height: 10rem;
+}
